@@ -1,0 +1,38 @@
+<h1>Personal Diaries</h1>
+
+<p></p>
+
+<div>
+  <button (click)="add()">
+    Add New Diary
+  </button>
+</div>
+<p *ngIf="!userDiaries"><em>Loading...</em></p>
+<div>
+    <ul class="diaries" *ngIf="userDiaries">
+        <li *ngFor="*ngFor=let userDiary of userDiaries; let i=index;">          
+            <span class="badge">{{userDiary.diaryDate}}</span> {{userDiary.diaryTitle}}         
+          <button class="delete" title="delete diary"
+            (click)="delete(userDiary.userDiaryId)">x</button>
+        </li>
+      </ul>
+</div>
+<!-- <table class='table table-striped' *ngIf="userDiaries">
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Data</th>
+      <th>Image</th>
+      <th>Insertion Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let userDiary of userDiaries">
+      <td>{{ userDiary.diaryText }}</td>
+      <td>{{ userDiary.diaryDataTime }}</td>
+      <td>{{ userDiary.diaryImage }}</td>
+      <td>{{ userDiary.insertionDate }}</td>
+    </tr>
+  </tbody>
+</table>
+ -->
